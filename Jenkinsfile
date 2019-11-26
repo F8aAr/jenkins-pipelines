@@ -10,7 +10,7 @@ pipeline {
             git 'https://github.com/jglick/simple-maven-project-with-tests.git'
             container('ubuntu') {
             // Run Maven on a Unix agent.
-                bash "apt --version"
+                sh "apt --version"
             }
             // To run Maven on a Windows agent, use
             // bat "mvn -Dmaven.test.failure.ignore=true clean package"
@@ -21,7 +21,7 @@ pipeline {
             // failed, record the test results and archive the jar file.
             success {
 
-               bash "echo Funciona"
+               sh "echo Funciona"
             }
          }
       }
