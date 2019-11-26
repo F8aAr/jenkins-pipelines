@@ -1,6 +1,6 @@
 pipeline {
    agent {
-       label "mietiqueta"
+       label "ubuntu"
    }
 
    stages {
@@ -8,7 +8,7 @@ pipeline {
          steps {
             // Get some code from a GitHub repository
             git 'https://github.com/jglick/simple-maven-project-with-tests.git'
-            container('ubuntu') {
+            container('mietiqueta') {
             // Run Maven on a Unix agent.
                 sh "apt --version"
             }
